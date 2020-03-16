@@ -3,12 +3,12 @@ using Domain.Exceptions;
 
 namespace Domain.Entites
 {
-    public class Product
+    public abstract class Product
     {
         /// <summary>
         /// Product Id
         /// </summary>
-        public string Id { get; set; }
+        public string Id { get; private set; }
 
         /// <summary>
         /// Product name
@@ -16,14 +16,10 @@ namespace Domain.Entites
         public string Name { get; private set; }
 
         /// <summary>
-        /// Base price per month
+        /// Annual cost of prodcut
         /// </summary>
-        public decimal BasePrice { get; private set; }
+        public decimal AnnualCost { get; private set; }
 
-        /// <summary>
-        /// Consumption costs per month in cents per kWh
-        /// </summary>
-        public decimal ConsumptionPrice { get; private set; }
 
         #region Setters
 
@@ -33,47 +29,25 @@ namespace Domain.Entites
         /// <param name="name"></param>
         public void SetName(string name)
         {
-            if (string.IsNullOrEmpty(name))
-            {
-                throw new ProductException("The product name is empty!");
-            }
+            if (string.IsNullOrEmpty(name)) throw new ProductException("The product name is empty!");
 
             Name = name;
         }
 
-        /// <summary>
-        /// Set base price for the product
-        /// </summary>
-        /// <param name="basePrice"></param>
-        public void SetBasePrice(decimal basePrice)
+        public void SetAnnualCost(decimal annualCost)
         {
-            if (basePrice < 0)
-            {
-                throw new ProductException("Base price can not be less then ZERO!");
-            }
-
-            BasePrice = basePrice;
-        }
-
-        public void SetConsumptionPrice(decimal consumptionPrice)
-        {
-            if (consumptionPrice < 0)
-            {
-                throw new ProductException("Consumption price can not be less then ZERO!");
-            }
-
-            ConsumptionPrice = consumptionPrice;
+            if(annualCost < 0 ) throw new ProductException("Annual cost can not be less than ZERO!");
+            AnnualCost = annualCost;
         }
 
         #endregion
 
         #region Constructors
-        public Product(string name, decimal basePrice, decimal consumptionPrice)
+        public Product(string name, decimal annualCost)
         {
             Id = Guid.NewGuid().ToString();
             SetName(name);
-            SetBasePrice(basePrice);
-            SetConsumptionPrice(consumptionPrice);
+            SetAnnualCost(annualCost);
         } 
         #endregion
     }

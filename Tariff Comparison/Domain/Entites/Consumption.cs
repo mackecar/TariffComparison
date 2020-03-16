@@ -51,22 +51,7 @@ namespace Domain.Entites
             Product = product;
         }
 
-        public void CalculateTotalAmount()
-        {
-            if (Product == null)
-            {
-                throw new ConsumptionException("Product can not be null!");
-            }
-            decimal baseAnnualAmount = Product.BasePrice * 12;
-            decimal consumptionAnnualAmount = ConsumedEnergy * Product.ConsumptionPrice;
-
-            if (baseAnnualAmount +consumptionAnnualAmount < 0)
-            {
-                throw new ConstraintException("Total amount can not be less then ZERO!");
-            }
-
-            TotalAmount = baseAnnualAmount + consumptionAnnualAmount;
-        }
+        
         #endregion
 
         #region Constructors
@@ -76,7 +61,6 @@ namespace Domain.Entites
             Id = Guid.NewGuid().ToString();
             SetProduct(Product);
             SetConsumedEnergy(consumedEnergy);
-            CalculateTotalAmount();
         }
 
         #endregion
