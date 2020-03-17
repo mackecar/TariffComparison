@@ -34,20 +34,16 @@ namespace Domain.Entites
             Name = name;
         }
 
-        public void SetAnnualCost(decimal annualCost)
-        {
-            if(annualCost < 0 ) throw new ProductException("Annual cost can not be less than ZERO!");
-            AnnualCost = annualCost;
-        }
+
+        public abstract decimal GetAnnualCost();
 
         #endregion
 
         #region Constructors
-        public Product(string name, decimal annualCost)
+        public Product(string name)
         {
             Id = Guid.NewGuid().ToString();
             SetName(name);
-            SetAnnualCost(annualCost);
         } 
         #endregion
     }
