@@ -15,11 +15,6 @@ namespace Domain.Entites
         /// </summary>
         public string Name { get; private set; }
 
-        /// <summary>
-        /// Annual cost of prodcut
-        /// </summary>
-        public decimal AnnualCost { get; private set; }
-
 
         #region Setters
 
@@ -35,7 +30,7 @@ namespace Domain.Entites
         }
 
 
-        public abstract decimal GetAnnualCost();
+        public abstract decimal GetAnnualCost(decimal consumption);
 
         #endregion
 
