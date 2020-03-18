@@ -30,7 +30,7 @@ namespace Domain.Entites
         }
 
 
-        public abstract decimal GetAnnualCost(decimal consumption);
+        public abstract decimal GetAnnualCost(int consumption);
 
         #endregion
 

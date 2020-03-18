@@ -29,7 +29,7 @@ namespace Domain.Entites
             UnitPrice = unitPrice;
         }
 
-        public override decimal GetAnnualCost(decimal consumption)
+        public override decimal GetAnnualCost(int consumption)
         {
             decimal basePrice = MonthPrice * 12;//annual price 5 euro
             decimal consumptionPrice = consumption * (decimal) UnitPrice; //consumption costs 0.22 euro

@@ -37,9 +37,15 @@ namespace Domain.Entites
             AdditionalUnitPrice = additionalUnitPrice;
         }
 
-        public override decimal GetAnnualCost(decimal consumption)
+        public override decimal GetAnnualCost(int consumption)
         {
-            throw new NotImplementedException();
+            if (consumption <= UnitLimit)
+            {
+                return BasePrice;
+            }
+
+            decimal additionalCost = (consumption - UnitLimit) * AdditionalUnitPrice;
+            return BasePrice + additionalCost;
         }
     }
 }
