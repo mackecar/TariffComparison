@@ -7,6 +7,6 @@ namespace ApplicationCore.ServiceIntefaces
 {
     public interface IProductUsageService
     {
-        ProductUsage Create(decimal consumption, string tariffeName, decimal annualCost);
+        ProductUsage Create(string tariffeName, decimal annualCost);
     }
 }

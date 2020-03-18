@@ -7,21 +7,13 @@ namespace Domain.Entites
 {
     public class ProductUsage
     {
-        public decimal Consumption { get; private set; }
         public string TariffeName { get; private set; }
         public decimal AnnualCost { get; private set; }
 
-        public ProductUsage(decimal consumption, string tariffeName, decimal annualCost)
+        public ProductUsage(string tariffeName, decimal annualCost)
         {
-            SetConsumption(consumption);
             SetTariffeName(tariffeName);
             SetAnnualCost(annualCost);
-        }
-
-        public void SetConsumption(decimal consumption)
-        {
-            if(consumption < 0) throw new ProductUsageException("The consumption cannot be less than ZERO!");
-            Consumption = consumption;
         }
 
         public void SetTariffeName(string tariffeName)
