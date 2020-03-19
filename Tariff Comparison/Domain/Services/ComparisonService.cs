@@ -27,7 +27,7 @@ namespace ApplicationCore.Services
         {
             try
             {
-                ProductA productA = _productAService.Create("basic electricity tariff", 5, (decimal)0.22);
+                ProductA productA = _productAService.Create("Basic electricity tariff", 5, (decimal)0.22);
                 ProductB productB = _productBService.Create("Packaged tariff", 800, 4000, (decimal)0.3);
 
                 ProductUsage productAUsage = _productUsageService.Create(productA.Name, productA.GetAnnualCost(consumption));

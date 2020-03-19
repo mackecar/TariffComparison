@@ -28,6 +28,13 @@ namespace XUnitTest
         }
 
         [Fact]
+        public void ProductACannotGetComparison()
+        {
+            ProductA sut = new ProductA("test", 0, 0);
+            Assert.Throws<ProductException>(() => sut.GetAnnualCost(-1));
+        }
+
+        [Fact]
         public void ProductBWrongName()
         {
             Assert.Throws<ProductException>(() => new ProductB("",0,0,0));
@@ -49,6 +56,13 @@ namespace XUnitTest
         public void ProductBAdditionalUnitPrice()
         {
             Assert.Throws<ProductException>(() => new ProductB("test", 0, 0, -1));
+        }
+
+        [Fact]
+        public void ProductBCannotGetComparison()
+        {
+            ProductB sut = new ProductB("test", 0, 0, 0);
+            Assert.Throws<ProductException>(() => sut.GetAnnualCost(-1));
         }
 
         [Fact]

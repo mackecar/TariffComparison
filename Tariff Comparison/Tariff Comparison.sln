@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "Domain\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestApi", "RestApi\RestApi.csproj", "{6E700717-8CE1-4810-A9BE-E12EBA9C3747}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest", "XUnitTest\XUnitTest.csproj", "{FB10663A-4F04-49EC-9ADF-A8754D3CE796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTest", "XUnitTest\XUnitTest.csproj", "{FB10663A-4F04-49EC-9ADF-A8754D3CE796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

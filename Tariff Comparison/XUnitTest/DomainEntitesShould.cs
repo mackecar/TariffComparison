@@ -9,24 +9,24 @@ namespace XUnitTest
         [Fact]
         public void CreateProductA()
         {
-            ProductA sut = new ProductA("test",100,(decimal)0.2);
+            ProductA sut = new ProductA("Basic electricity tariff", 5, (decimal)0.22);
             
             Assert.IsType((typeof(ProductA)),sut);
-            Assert.Equal("test",sut.Name);
-            Assert.Equal(100,sut.MonthPrice);
-            Assert.Equal((decimal)0.2, sut.UnitPrice);
+            Assert.Equal("Basic electricity tariff", sut.Name);
+            Assert.Equal(5,sut.MonthPrice);
+            Assert.Equal((decimal)0.22, sut.UnitPrice);
         }
 
         [Fact]
         public void CreateProductB()
         {
-            ProductB sut = new ProductB("test",200,50,(decimal)0.2);
+            ProductB sut = new ProductB("Packaged tariff", 800, 4000, (decimal)0.3);
 
             Assert.IsType((typeof(ProductB)), sut);
-            Assert.Equal("test", sut.Name);
-            Assert.Equal(200, sut.BasePrice);
-            Assert.Equal(50, sut.UnitLimit);
-            Assert.Equal((decimal)0.2, sut.AdditionalUnitPrice);
+            Assert.Equal("Packaged tariff", sut.Name);
+            Assert.Equal(800, sut.BasePrice);
+            Assert.Equal(4000, sut.UnitLimit);
+            Assert.Equal((decimal)0.3, sut.AdditionalUnitPrice);
         }
 
         [Fact]

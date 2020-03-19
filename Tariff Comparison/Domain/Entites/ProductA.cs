@@ -58,8 +58,11 @@ namespace Domain.Entites
         /// </summary>
         /// <param name="consumption">Value of consumption</param>
         /// <returns>Decimal value for annual cost</returns>
+        /// <exception cref="ProductException">The consumption cannot be less than ZERO!</exception>
         public override decimal GetAnnualCost(decimal consumption)
         {
+            if(consumption < 0) throw new ProductException("The consumption cannot be less than ZERO!");
+
             decimal basePrice = MonthPrice * 12;//annual price 5 euro
             decimal consumptionPrice = consumption * (decimal)UnitPrice; //consumption costs 0.22 euro
             return basePrice + consumptionPrice;
