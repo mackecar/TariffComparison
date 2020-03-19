@@ -19,19 +19,19 @@ namespace Domain.Entites
             SetBAdditionalUnitPrice(additionalUnitPrice);
         }
 
-        public void SetBasePrice(decimal basePrice)
+        private void SetBasePrice(decimal basePrice)
         {
             if(basePrice < 0) throw new ProductException("The base price cannot be less than ZERO!");
             BasePrice = basePrice;
         }
 
-        public void SetUnitLimit(int unitLimit)
+        private void SetUnitLimit(int unitLimit)
         {
             if (unitLimit < 0) throw new ProductException("The unit limit cannot be less than ZERO!");
             UnitLimit = unitLimit;
         }
 
-        public void SetBAdditionalUnitPrice(decimal additionalUnitPrice)
+        private void SetBAdditionalUnitPrice(decimal additionalUnitPrice)
         {
             if (additionalUnitPrice < 0) throw new ProductException("The additional unit price cannot be less than ZERO!");
             AdditionalUnitPrice = additionalUnitPrice;

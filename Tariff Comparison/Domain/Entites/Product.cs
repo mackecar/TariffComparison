@@ -15,6 +15,15 @@ namespace Domain.Entites
         /// </summary>
         public string Name { get; private set; }
 
+        #region Constructors
+
+        protected Product(string name)
+        {
+            Id = Guid.NewGuid().ToString();
+            SetName(name);
+        }
+
+        #endregion
 
         #region Setters
 
@@ -22,24 +31,19 @@ namespace Domain.Entites
         /// Set name for the product
         /// </summary>
         /// <param name="name"></param>
-        public void SetName(string name)
+        protected void SetName(string name)
         {
             if (string.IsNullOrEmpty(name)) throw new ProductException("The product name is empty!");
 
             Name = name;
         }
 
+        #endregion
+
+        #region Methods
 
         public abstract decimal GetAnnualCost(decimal consumption);
 
-        #endregion
-
-        #region Constructors
-        public Product(string name)
-        {
-            Id = Guid.NewGuid().ToString();
-            SetName(name);
-        } 
         #endregion
     }
 }
