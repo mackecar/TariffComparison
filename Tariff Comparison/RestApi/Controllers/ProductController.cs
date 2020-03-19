@@ -21,12 +21,28 @@ namespace RestApi.Controllers
         }
 
         [HttpGet]
-        [Route("GetComparation")]
+        [Route("GetComparationDemo")]
         public IActionResult GetComparation()
         {
             try
             {
                 List<ProductUsage> comparationResult = _comparationService.GetComparation(4500);
+
+                return Ok(comparationResult);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ResponseHelper.ErrorResponse(ex.Message));
+            }
+        }
+
+        [HttpGet]
+        [Route("GetComparationByConsumption")]
+        public IActionResult GetComparationByConsumption([FromQuery]decimal consumption)
+        {
+            try
+            {
+                List<ProductUsage> comparationResult = _comparationService.GetComparation(consumption);
 
                 return Ok(comparationResult);
             }
