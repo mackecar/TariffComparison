@@ -10,7 +10,7 @@ namespace ApplicationCore.Services
     public class ProductAService: IProductAService
     {
         public ProductAService() { }
-        
+
         public ProductA Create(string name, decimal monthPrice, decimal unitPrice)
         {
             try

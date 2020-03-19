@@ -11,6 +11,7 @@ namespace ApplicationCore.Services
     {
         public ProductBService() { }
 
+        
         public ProductB Create(string name, decimal basePrice, int unitLimit, decimal additionalUnitPrice)
         {
             try

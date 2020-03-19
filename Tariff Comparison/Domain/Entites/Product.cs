@@ -30,7 +30,8 @@ namespace Domain.Entites
         /// <summary>
         /// Set name for the product
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">Product name</param>
+        /// <exception cref="ProductException">The product name is empty!</exception>
         protected void SetName(string name)
         {
             if (string.IsNullOrEmpty(name)) throw new ProductException("The product name is empty!");
@@ -41,7 +42,11 @@ namespace Domain.Entites
         #endregion
 
         #region Methods
-
+        /// <summary>
+        /// Get annual cost calculation for product
+        /// </summary>
+        /// <param name="consumption">Value of consumption</param>
+        /// <returns>Decimal value for annual cost</returns>
         public abstract decimal GetAnnualCost(decimal consumption);
 
         #endregion

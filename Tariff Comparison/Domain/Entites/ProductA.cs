@@ -28,12 +28,22 @@ namespace Domain.Entites
 
         #region Setters
 
+        /// <summary>
+        /// Set month price
+        /// </summary>
+        /// <param name="monthPrice">Month price</param>
+        /// <exception cref="ProductException">The month price cannot be less than ZERO!</exception>
         private void SetMonthPrice(decimal monthPrice)
         {
             if (monthPrice < 0) throw new ProductException("The month price cannot be less than ZERO!");
             MonthPrice = monthPrice;
         }
 
+        /// <summary>
+        /// Set unit price
+        /// </summary>
+        /// <param name="unitPrice">Unit price</param>
+        /// <exception cref="ProductException">The unit price cannot be less than ZERO!</exception>
         private void SetUnitPrice(decimal unitPrice)
         {
             if (unitPrice < 0) throw new ProductException("The unit price cannot be less than ZERO!");
@@ -43,6 +53,11 @@ namespace Domain.Entites
 
         #region Methods
 
+        /// <summary>
+        /// Get annual cost calculation
+        /// </summary>
+        /// <param name="consumption">Value of consumption</param>
+        /// <returns>Decimal value for annual cost</returns>
         public override decimal GetAnnualCost(decimal consumption)
         {
             decimal basePrice = MonthPrice * 12;//annual price 5 euro

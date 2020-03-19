@@ -22,7 +22,8 @@ namespace ApplicationCore.Services
             _productUsageService = productUsageService;
         }
 
-        public List<ProductUsage> GetComparation(decimal consumption)
+        
+        public List<ProductUsage> GetComparison(decimal consumption)
         {
             try
             {

@@ -26,7 +26,7 @@ namespace RestApi.Controllers
         {
             try
             {
-                List<ProductUsage> comparationResult = _comparationService.GetComparation(4500);
+                List<ProductUsage> comparationResult = _comparationService.GetComparison(4500);
 
                 return Ok(comparationResult);
             }
@@ -42,7 +42,7 @@ namespace RestApi.Controllers
         {
             try
             {
-                List<ProductUsage> comparationResult = _comparationService.GetComparation(consumption);
+                List<ProductUsage> comparationResult = _comparationService.GetComparison(consumption);
 
                 return Ok(comparationResult);
             }
