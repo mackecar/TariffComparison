@@ -27,7 +27,7 @@ namespace RestApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IComparationService, ComparationService>();
+            services.AddScoped<IComparationService, ComparisonService>();
             services.AddScoped<IProductAService, ProductAService>();
             services.AddScoped<IProductBService, ProductBService>();
             services.AddScoped<IProductUsageService, ProductUsageService>();

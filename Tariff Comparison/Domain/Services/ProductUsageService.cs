@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ApplicationCore.Exceptions;
 using ApplicationCore.ServiceIntefaces;
 using Domain.Entites;
 
@@ -12,7 +13,14 @@ namespace ApplicationCore.Services
 
         public ProductUsage Create(string tariffeName, decimal annualCost)
         {
-            return new ProductUsage(tariffeName,annualCost);
+            try
+            {
+                return new ProductUsage(tariffeName, annualCost);
+            }
+            catch (Exception ex)
+            {
+                throw new ProductUsageServiceException($"Creating Product Usage is not possible! {ex.Message}");
+            }
         }
     }
 }
